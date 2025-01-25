@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link id="link-font" rel="stylesheet">
+	<link rel="stylesheet" href="editor.css">
+	<title>Html Code Editor</title>
+</head>
+<body>
+<header>
+<div class="header">
+<a class="logo" href="#">LuminaEdit</a>
+
+<button class="more-setting"></button>	
+</div>
+<div class="more-details">
+<ul>
+	<li class="more-list"><a class="more-link" href="#">Sign In</a></li>
+	<li class="more-list"><a class="more-link" href="#">Your works</a></li>
+	<li class="more-list"><a class="more-link" href="#">Account Settings</a></li>
+	<li class="more-list">
+		<div class="mode-cont">
+	  <label for="dark-toggle">Dark mode:</label>
+		<input id="dark-toggle" type="checkbox">
+		</div>
+		 </li>
+</ul>	
+</div>
+</header>	
+<main>
+<section class="action-btn-section">
+	<button class="action-btn save">
+		<svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" viewBox="0 0 24 24"><path fill="currentColor" d="M17 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V7zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3s3 1.34 3 3s-1.34 3-3 3m3-10H5V5h10z"/></svg></button>
+	<button class="action-btn run">
+		<svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" viewBox="0 0 24 24"><path fill="currentColor" d="M21.409 9.353a2.998 2.998 0 0 1 0 5.294L8.597 21.614C6.534 22.737 4 21.277 4 18.968V5.033c0-2.31 2.534-3.769 4.597-2.648z"/></svg>
+	</button>
+	<button class="action-btn reset">
+		<svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3.578 6.487A8 8 0 1 1 2.5 10.5"/><path d="M7.5 6.5h-4v-4"/></g></svg></button>
+	<button class="action-btn download-btn">
+			<svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" viewBox="0 0 24 24"><path fill="currentColor" d="M12 15.575q-.2 0-.375-.062T11.3 15.3l-3.6-3.6q-.3-.3-.288-.7t.288-.7q.3-.3.713-.312t.712.287L11 12.15V5q0-.425.288-.712T12 4t.713.288T13 5v7.15l1.875-1.875q.3-.3.713-.288t.712.313q.275.3.288.7t-.288.7l-3.6 3.6q-.15.15-.325.213t-.375.062M6 20q-.825 0-1.412-.587T4 18v-2q0-.425.288-.712T5 15t.713.288T6 16v2h12v-2q0-.425.288-.712T19 15t.713.288T20 16v2q0 .825-.587 1.413T18 20z"/></svg>
+		</button>
+	<button class="action-btn editor-more-setting">•••</button>
+	<section class="editor-settings">
+		<div>
+<label for="font-size">Font Size</label>
+<select id="font-size">
+	<option value="11">11px</option>
+	<option value="12">12px</option>
+	<option value="13">13px</option>
+	<option value="14">14px</option>
+	<option value="15">15px</option>
+	<option value="16" selected>16px</option>
+	<option value="17">17px</option>
+	<option value="18">18px</option>
+	<option value="19">19px</option>
+	<option value="20">20px</option>
+</select>
+		</div>
+		<div>
+			<label for="editor-font">Editor Font:</label>
+			<select id="editor-font">
+				<option disabled selected>Choose a font:</option>
+				<option value="Noto Mono">Noto Mono
+				</option>
+				<option value="Fira Code">Fira Code</option>
+				<option value="JetBrains Mono">JetBrains Mono</option>
+				<option value="Source Code Pro">Source Code Pro</option>
+				<option value="Inconsolata">Inconsolata</option>
+				<option value="Roboto Mono">Roboto Mono</option>
+				<option value="Overpass Mono">Overpass Mono</option>
+			</select>
+		</div>
+		<div>
+			<label for="line-height">Line height:</label>
+			<select id="line-height">
+				<option value="15">15px</option>
+				<option value="17">17px</option>
+				<option value="19">19px</option>
+				<option value="21">21px</option>
+				<option value="23">23px</option>
+				<option value="25">25px</option>
+				<option value="27">27px</option>
+			</select>
+		</div>
+		<div class="mode-cont">
+ <label for="live-preview">Live preview:</label>
+ <input checked type="checkbox" id="live-preview">
+		</div>
+		<div class="mode-cont">
+      <label for="auto-save">Auto save:</label>
+      <input type="checkbox" id="auto-save">
+		</div>
+		<div class="template-div">
+			<button class="add-template">Add Template </button>
+			<div class="template">
+				<ul class="template-list">
+					<li>
+						<input type="radio" name="temp" id="hello_world">
+						<label for="hello_world">Hello World</label>
+					</li>
+					<li>
+						<input type="radio" name="temp" id="sign_in_form">						
+						<label for="sign_in_form">Sign In Form</label>
+					</li>
+					<li>
+						<input type="radio" name="temp" id="calculator">						
+						<label for="calculator">Calculator</label>
+					</li>
+					<li>
+						<input type="radio" name="temp" id="guess_num">						
+						<label for="guess_num">Guess The Number</label>
+					</li>
+					<li>
+						<input type="radio" name="temp" id="accordion">						
+						<label for="accordion">Accordion</label>
+					</li>
+					<li>
+						<input type="radio" name="temp" id="greeting">						
+						<label for="greeting">Greeting</label>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div>
+	<label for="text-wrap">Text Wrap:</label>
+	<input checked type="checkbox" id="text-wrap">
+		</div>
+		<div class="library-div">
+			<button class="add-library">Add Library</button>
+			<div class="library">
+				<input type="url" id="library" placeholder="Add library/framework">
+				<button class="add-lib">Add</button>
+				<p class="err-lib err-msg"></p>
+				<div class="added-lib">
+				</div>
+			</div>
+			</div>
+		<div class="find-replace">
+		 <button class="find-btn ">
+				<svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" viewBox="0 0 24 24"><path fill="currentColor" d="m19.6 21l-6.3-6.3q-.75.6-1.725.95T9.5 16q-2.725 0-4.612-1.888T3 9.5t1.888-4.612T9.5 3t4.613 1.888T16 9.5q0 1.1-.35 2.075T14.7 13.3l6.3 6.3zM9.5 14q1.875 0 3.188-1.312T14 9.5t-1.312-3.187T9.5 5T6.313 6.313T5 9.5t1.313 3.188T9.5 14"/></svg>
+				Find and replace</button>
+		 <div class="find-replace-div">
+				<div class="input-group">
+				<label for="find">Find:</label>
+				<input type="text" id="find">
+				<p class="err-msg err-find-msg"></p>
+				</div>
+				<div class="input-group">
+			   <label for="replace">Replace:</label>
+				<input type="text" id="replace">
+				<button class="replace">Replace</button>
+				</div>
+			</div>
+		</div>
+	</section>
+</section>
+<section class="editor-mode-btn">
+	<button class="tab-btn active-btn" data-tab="html">HTML</button>
+	<button class="tab-btn" data-tab="css">CSS</button>
+	<button class="tab-btn" data-tab="js">JS</button>
+</section>
+<section class="editor-section-container">
+<article class="editor-section section-html active" id="html">
+<div contenteditable class="editor" id="html-editor" placeholder="write your html code here"></div>
+</article>
+<article class="editor-section section-css" id="css">
+<div contenteditable class="editor" id="css-editor" placeholder="write your css code here"></div>
+</article>
+<article class="editor-section section-js" id="js">
+<div contenteditable class="editor" id="js-editor" placeholder="write your javascript code here"></div>
+</article>
+<article class="result-section">
+<div class="result"> 
+<iframe class="result-frame"></iframe>
+</div>
+</article>
+</section>
+</main>
+
+<footer>
+
+</footer>
+</body>
+<script src="editor.js"></script>
+</html>

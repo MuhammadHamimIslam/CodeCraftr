@@ -1,0 +1,310 @@
+:root {
+	--body-bg: #DEDEDE;
+	--body-text-color: #1B1B1B;
+	--shadow: #616161;
+	--modal-bg: #AAAAAA;
+	--tab-btn-color: #1A1A1A;
+	--tab-btn-bg: #F2F2F2;
+	--bg-btn-console: #E8E8E8;
+	--text-btn-console: #1F1F1F;
+	--modal-ul-bg: #313131D4;
+	--modal-ul-text: #F2F2F2D4
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	width: 100vw;
+	height: 100vh;
+	width: 100dvw;
+	height: 100dvh;
+	background-color: var(--body-bg);
+	color: var(--body-text-color);
+	transition: all 0.5s
+}
+/* header styles strats*/
+.header {
+	width: 95%;
+	display: flex;
+	justify-content: space-between;
+	margin: 0.5rem auto
+}
+.logo {
+	text-decoration: none;
+	font-size: 1.5rem;
+	background-image: linear-gradient(#FFEA00, #FF0000);
+	background-clip: text;
+	color: transparent;
+	font-weight: bold;
+}
+.more-setting {
+	width: 3rem;
+	height: 3rem;
+	background: #C9C9C9;
+	border: none;
+	border-radius: 0.3rem;
+	box-shadow: 0 0 0.2rem var(--shadow);
+	position: relative;
+}
+.more-details {
+	display: none;
+	position: absolute;
+	right: 0.4rem;
+	top: 4rem;
+	background-color: var(--modal-bg);
+	padding: 0.5rem 0.1rem;
+	border-radius: 0.2rem;
+	z-index: 999;
+}
+.more-details ul {
+	list-style: none;
+	display: flex;
+	flex-flow: column wrap;
+	width: 100%;
+}
+.more-details ul li {
+	width: 100%;
+	display: flex;
+}
+.more-details ul li a {
+	text-decoration: none;
+	color: var(--body-text-color);
+	transition: all 0.5s;
+	width: 100%;
+	color: var(--body-text-color);
+	text-align: center;
+	padding: 0.3rem
+}
+.more-details ul li a:hover {
+	background: var(--modal-ul-bg);
+	color: var(--modal-ul-text);
+}
+/* header styles ends*/
+.action-btn-section {
+	width: 50%;
+	display: flex;
+	justify-content: space-between;
+	float: right;
+	position: relative;
+}
+.action-btn {
+	background: transparent;
+	border: none;
+	font-size: 1.5rem;
+	transition: color 0.5s;
+	color: var(--body-text-color);
+}
+.action-btn:hover {
+	color: rgba(0, 140, 0, 1);
+}
+.editor-section {
+	width: 98%;
+	margin: 0 auto;
+	display: none;
+}
+.editor-section .editor {
+	width: 100%;
+	outline: none;
+	font-size: 1rem;
+	border: 0.1rem solid #000000;
+	aspect-ratio: 1 / 1;
+	resize: both;
+	overflow: auto;
+	font-family: monospace;
+	white-space: pre-wrap;
+}
+.editor-mode-btn {
+	display: flex;
+	justify-content: center;
+}
+.editor-mode-btn .tab-btn {
+	padding: 0.4rem 0.8rem;
+	background: var(--tab-btn-bg);
+	font-weight: 430;
+	border: none;
+	font-size: 1rem;
+	color: var(--tab-btn-color);
+	transition: background-color 0.5s, color 0.5s;
+	border: 0.1rem solid var(--shadow);
+}
+.editor-mode-btn .tab-btn.active-btn {
+	background: var(--tab-btn-color);
+	color: var(--tab-btn-bg);
+}
+.editor-section.active {
+	display: block;
+}
+.editor-settings {
+	position: absolute;
+	background-color: var(--modal-bg);
+	top: 2rem;
+	right: 0;
+	font-size: 1.2rem;
+	padding: 0.3rem 0.1rem;
+	z-index: 100;
+	box-shadow: 0 0 0.2rem var(--shadow);
+	border-radius: 0.3rem;
+	padding: 0.4rem;
+	display: none;
+	flex-flow: column wrap;
+	gap: 0.4rem;
+}
+.editor-settings select , .find-replace-div input{
+	outline: none;
+	padding: 0.3rem;
+	border: 0.1rem solid var(--shadow);
+	border-radius: 0.3rem;
+	font-size: 0.9rem;
+	transition: box-shadow 0.5s, border 0.5s;
+	background: var(--modal-ul-text);
+	color: var(--body-text-color);
+}
+.editor-settings select:focus, .find-replace-div input:focus {
+	box-shadow: 0 0 0 0.18rem #008EFFA3;
+	border-color: #008EFFA3
+}
+.result-section {
+	position: relative;
+}
+iframe {
+	width: 99%;
+	margin: 0 auto;
+	border: 0.1rem solid var(--shadow);
+	aspect-ratio: 3 / 2;
+	overflow: auto;
+}
+.template-div {
+	display: flex;
+	flex-direction: column
+}
+.template-div button, .add-library, .add-lib, .find-btn , .replace {
+	padding: 0.3rem;
+	font-size: 1.1rem;
+	background-color: #fff;
+	border: 0.1rem solid var(--shadow);
+	border-radius: 0.4rem;
+	margin-top: 0.3rem;
+}
+.find-btn{
+	display: inline-flex;
+	align-items: center;
+}
+.find-btn:focus svg{
+	transition: transform 0.5s;
+	transform: rotate(359deg) 
+}
+.template, .library, .find-replace-div {
+	display: none;
+	position: absolute;
+	top: 5rem;
+	left: -5rem;
+	background-color: var(--modal-bg);
+}
+.library{
+	padding: 0.2rem;
+	border-radius: 0.2rem;
+	background-color: #C6C6C6;
+}
+#library{
+	padding: 0.3rem;
+	background-color: #fff;
+	border-radius: 0.2rem;
+	border: 0.1rem, solid var(--shadow);
+	outline: none;
+	transition: border-color 0.5s ease
+}
+#library:focus{
+	border-color: #03B0FF
+}
+.template-div button:has(~ .template)::after , .add-library:has(~ .library)::after{
+	content: "+";
+	float: right;
+	margin-right: 0.3rem;
+	color: #00EE00;
+	font-weight: bold;
+}
+.template-div button:has(~ .template.add-block)::after , .add-library:has(~ .library.add-block)::after{
+	content: "-";
+	color: #FF0000;
+}
+.template ul {
+	margin-top: 0.4rem;
+	list-style: none;
+	display: flex;
+	flex-flow: column wrap;
+	gap: 0.4rem;
+	background-color: var(--body-bg);
+	padding: 0.3rem;
+	border-radius: 0.3rem
+}
+.template ul li {
+	background-color: var(--modal-ul-bg);
+	text-align: center;
+	padding: 0.11rem;
+	transition: background-color 0.5s;
+	color: var(--modal-ul-text);
+}
+.template ul li:has(input:checked) {
+	background-color: #0581FF;
+}
+.template ul li input {
+	display: none;
+}
+.mode-cont {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+.input-group{
+	margin-top: 0.3rem;
+	width: 100%;
+}
+.input-group input{
+	outline: none;
+	border: 0.1rem solid #2F2F2F
+}
+.library-item{
+	margin-top: 0.5rem;
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 0.1rem solid var(--shadow);
+}
+.library-item p{
+	color: #09B6FF;
+}
+.err-msg{
+	color: red;
+	font-size: 1rem
+}
+.added-lib p{
+	text-wrap: wrap;
+}
+.find-replace-div {
+	justify-content: center;
+	flex-direction: column;
+	padding: 0.3rem;
+	border-radius: 0.2rem;
+	box-shadow: 0 0 0.2rem var(--shadow);
+}
+/* dark mode variable */
+body.dark-mode {
+	--body-bg: #333;
+	--body-text-color: #EAEAEA;
+	--shadow: #D8D8D8;
+	--modal-bg: #444444;
+	--tab-btn-color: #F0F0F0;
+	--tab-btn-bg: #212121;
+	--bg-btn-console: #111111;
+	--text-btn-console: #F0F0F0;
+	--modal-ul-bg: #FFFFFFD4;
+	--modal-ul-text: #000000D4
+}
+/* utility class */
+.show-flex {
+	display: flex;
+}
+.add-block {
+	display: block;
+}

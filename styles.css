@@ -1,0 +1,89 @@
+:root{
+	--body-bg: #333;
+	--body-text: #F7F7F7;
+	--footer-bg: #F0F0F0
+}
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box
+}
+body {
+	width: 100vw;
+	height: 100vh;
+	width: 100dvw;
+	height: 100dvh;
+	background-color: var(--body-bg);
+	font-family: Arial, sans-serif;
+	color: var(--body-text)
+}
+ .container, .feature-item{
+	width: 100%;
+	display: flex;
+	flex-flow: column wrap;
+	gap: 1rem;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 1rem;
+	text-align: center;
+	margin: 0.2rem auto;
+}
+.hero .container a{
+	text-decoration: none;
+	background-color: #01A4FF;
+	color: var(--body-text);
+	transition: 0.5s all;
+	padding: 0.5rem;
+	border-radius: 0.4rem;
+	width: 10rem;
+}
+.feature-item{
+	width: 95%;
+	background-color: #B2B2B2;
+	border-radius: 0.3rem;
+	padding: 0.5rem;
+}
+footer{
+ width: 100%;
+ background-color: var(--footer-bg);
+ padding-bottom: 0.3rem;
+ color: var(--body-bg);
+}
+.social-container{
+	display: flex;
+	gap: 1.5rem;
+	justify-content: center;
+	width: 100%;
+	
+}
+@media (min-width: 768px) {
+  .container, .feature-item {
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
+  .feature-item {
+    width: 30%; /* Adjusts features to display side-by-side on larger screens */
+  }
+  .hero .container a {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 0.9rem;
+  }
+  .hero .container h1 {
+    font-size: 1.5rem;
+  }
+  .social-container svg {
+    transform: scale(2); /* Resize icons for smaller screens */
+  }
+}
+.hero .container a:hover {
+  background-color: #0180CC;
+  color: #FFF;
+  transform: scale(1.05);
+  
+}
