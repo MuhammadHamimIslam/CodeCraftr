@@ -1,0 +1,118 @@
+:root{
+	--transition: all 0.5s ease-in
+}
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box
+}
+body{
+	width: 100dvw;
+	height: 100dvh
+}
+main{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.input{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 1rem;
+	align-items: center;
+	padding: 1rem;
+}
+.input .range-cont{
+	display: flex;
+	gap: 1rem;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.3rem
+}
+.input .range-cont input{
+	padding: 0.1rem;
+	width: 3rem;
+	height: 3rem;
+	padding: 0.2rem;
+	caret-color: red;
+	font-size: 2rem;
+	font-weight: bold;
+	border: 0.1rem solid #0590FF;
+	outline: none;
+	border-radius: 0.3rem;
+	background-color: #DCDCDC;
+	color: #fff;
+	transition: var(--transition)
+}
+.input .range-cont input:is(:hover, :focus){
+	box-shadow: 0 0 0 0.1rem #0590FFC4;
+}
+#number{
+	padding: 0.3rem 0.8rem;
+	outline: none;
+	border: 0.1rem solid #666666B5;
+	border-radius: 0.2rem;
+	font-size: 1.2rem;
+	transition: var(--transition);
+}
+#number:focus{
+	box-shadow: 0 0 0 0.1rem #494949B4;
+}
+.take-input{
+	display: flex;
+	flex-flow: column wrap;
+	gap: 1rem
+}
+.take-input button{
+	width: 5rem;
+	padding: 0.5rem;
+	font-size: 1rem;
+	color: #fff;
+	border-radius: 0.2rem;
+	background-color: #2091FF;
+	border: 0.1rem solid #2091FF;
+	transition: var(--transition);
+}
+.take-input button:focus{
+	background-color: #fff;
+	color: #2091FF;
+}
+.err-msg{
+	color: red;
+}
+.result{
+	width: 90%;
+	position: absolute;
+	top: -100%;
+	left: 50%;
+	transform: translateX(-50%);
+	aspect-ratio: 3/1;
+	background-color: #00A4FF;
+	opacity: 0;
+	transition: opacity 0.6s ease, transform 0.6s ease;
+	border-radius: 0.2rem;
+	display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.result .cross-btn{
+	position: absolute;
+	top: 0.2rem;
+	right: 0.3rem;
+	background-color: #FFFFFF;
+	font-size: 2rem;
+	border: none;
+	border-radius: 50%;
+	width: 2.5rem;
+	height: 2.5rem;
+}
+
+.show{
+	opacity: 1;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	transition: opacity 0.6s ease, transform 0.6s ease;
+}

@@ -1,0 +1,40 @@
+:root{
+	--color1: #0B96FF;
+	--color2: #FFF10B;
+	--color3: #FF0B0B;
+	--color4: #FF9E0B;
+	--angle: 90deg
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box
+}
+
+.cont{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+}
+
+h2{
+  text-align: center;
+  background: linear-gradient(var(--angle), var(--color1), var(--color2), var(--color3), var(--color4));
+  background-size: 200% 200%;
+  background-clip: text;
+  color: transparent;
+  animation: effect 3s infinite
+}
+
+@keyframes effect {
+  0% { 
+    --angle: 0deg;--color1: #00f5ff;--color2: #4d4dff;--color3: #ae52d4;--color4: #ff87ca;}
+  50% {
+    --angle: 180deg;--color1: #ae52d4;--color2: #00f5ff;--color3: #ff87ca;--color4: #4d4dff;}
+  100% {
+    --angle: 360deg;--color1: #ff87ca;--color2: #ae52d4;--color3: #4d4dff;--color4: #00f5ff;
+  }
+}

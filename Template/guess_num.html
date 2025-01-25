@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Guess the number</title>
+</head>
+<body>
+		<main>
+		<section class="input">
+			<div>
+			<label for="number">Enter a number between:</label>
+			<div class="range-cont">
+				<input type="number" id="min">
+				<p>to</p>
+				<input type="number" id="max">
+			</div>
+			</div>
+			<div class="take-input">
+					<input type="number" id="number" placeholder="Enter your guessed number">
+					<p class="err-msg"></p>
+					<button class="guess-btn">Guess</button>
+			</div>
+		</section>
+
+		<section class="result">
+			<button class="cross-btn">×</button>
+		<p>Number not matched.Try again!</p>	
+		</section>
+		</main>
+</body>
+</html>
