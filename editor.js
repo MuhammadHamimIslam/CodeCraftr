@@ -281,9 +281,9 @@ wrapText.addEventListener('change', wrapCode)
 // download the code 
 document.querySelector('.download-btn').addEventListener('click', () => {
 	  // Download each file
-  downloadFile(htmlEditor.value, "index.html", "text/html");
-  downloadFile(cssEditor.value, "styles.css", "text/css");
-  downloadFile(jsEditor.value, "script.js", "application/javascript");
+  downloadFile(htmlEditor.textContent, "index.html", "text/html");
+  downloadFile(cssEditor.textContent, "styles.css", "text/css");
+  downloadFile(jsEditor.textContent, "script.js", "application/javascript");
 })
 // library popup
 addPopup(document.querySelector('.add-library'), 'click', document.querySelector('.library'), 'add-block');
